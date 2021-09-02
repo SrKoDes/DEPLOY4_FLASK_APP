@@ -2,14 +2,14 @@ import helper
 from flask import Flask, request, Response
 import json
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
+@application.route('/')
 def hello_world():
     return "Hello World"
 
 
-@app.route('/item/new', methods=['POST'])
+@application.route('/item/new', methods=['POST'])
 def add_item():
     #Get item from the POST body
     request_data = request.get_json()
@@ -29,7 +29,7 @@ def add_item():
     return response
 
 
-@app.route('/items/all')
+@application.route('/items/all')
 def get_all_items():
     # Get items from the helper
     response_data = helper.get_all_items()
@@ -40,7 +40,7 @@ def get_all_items():
 
 
 
-@app.route('/item/status', methods=['GET'])
+@application.route('/item/status', methods=['GET'])
 def get_item():
     # Get parameter from the URL
     item_name = request.args.get('name')
@@ -62,7 +62,7 @@ def get_item():
     return response
 
 
-@app.route('/item/update', methods=['PUT'])
+@application.route('/item/update', methods=['PUT'])
 def update_status():
     #Get item from the POST body
     request_data = request.get_json()
@@ -82,7 +82,7 @@ def update_status():
     return response
 
 
-@app.route('/item/delete', methods=['DELETE'])
+@application.route('/item/delete', methods=['DELETE'])
 def delete_item():
     #Get the item from the POST body
     request_data = request.get_json()
