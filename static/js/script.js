@@ -1,10 +1,25 @@
-const catButton = document.getElementById('catButton');
-const dogButton = document.getElementById('dogButton');
-const catResult = document.getElementById('catPic');
-const dogResult = document.getElementById('dogPic');
 
-dogButton.addEventListener('click', getRandomDog);
-catButton.addEventListener('click', getRandomCat);
+//arena html
+//actions elements
+const actionMenu = document.getElementById('actions');
+const attackButton = document.getElementById('attack');
+const abilitiesButton = document.getElementById('abilities');
+
+//abilitiesMenu elements
+const abilitiesMenu = document.getElementById('abilitiesMenu');
+
+
+//player elements
+const playerPic = document.getElementById('playerPic');
+
+
+//buttons
+// attackButton.addEventListener('click', )
+abilitiesButton.addEventListener('click', goAbilitiesMenu);
+
+// function getPlayer() {
+//   playerResult.innerHTML = `<img src = "${'https://random.dog/cf730b6b-1810-4a1a-a2f3-583ee28dce4b.jpg'}"/>`
+// }
 
 function getRandomDog() {
   fetch('https://random.dog/woof.json')
@@ -14,20 +29,13 @@ function getRandomDog() {
       getRandomDog();
     }
     else{
-      dogResult.innerHTML = `<img src = "${data.url}"/>`
+      playerPic.innerHTML = `<img src = "${data.url}"/>`
     }
   });
 }
 
-function getRandomCat() {
-  fetch('https://aws.random.cat/meow')
-  .then(result => result.json())
-  .then( data => {
-    if(data.file.includes('.mp4')) {
-      getRandomCat();
-    }
-    else{
-      catResult.innerHTML = `<img src = "${data.file}"/>`
-    }
-  });
+
+function goAbilitiesMenu() {
+  actionMenu.parentNode.removeChild(actionMenu)
+  abilitiesMenu.style.display = "flex"
 }

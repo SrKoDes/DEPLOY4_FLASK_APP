@@ -5,48 +5,58 @@
     <meta name="viewport" content="width=device-width">
     <title>Koala Arena</title>
     <link href="./static/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
 
-    <div class = "left">
-    </div>
+    <nav>
+      <h1>Koala Arena</h1>
 
-    <div class = "main">
+      <a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"> Click here for your free Koala! </a>
 
-      <nav>
-        <h1>Koala Arena</h1>
-        <!-- <a href="www.google.com">HOME</a>
-        <a href="www.google.com">ABOUT</a>
-        <a href="www.google.com">PROJECTS</a>
-        <a href="www.google.com">CONTACT</a> -->
-      </nav>
+    </nav>
+    
+    <div class = "imgButtonPair">
 
-        <div id = "Bear">
-        </div>
-
-        <button id = "bearButton"> Tank like a Bear! </button>
-
-        <div id = 'Queenslander'>
-        </div>
-
-        <button id = "queenslanderButton"> Move like a Queenslander! </button>
-
-        <div id = 'Phascolarctos'>
-        </div>
-
-        <button id = "phascolarctosButton"> Intelligent like a Phascolarctos! </button>
-
-        <div id = 'Joey'>
-        </div>
-
-        <button id = "joeyButton"> Joey's get lucky! </button>
-
+      <div id = "bearPic">
+        <img src = "../static/images/Bear.jpg">
       </div>
 
-    </div>
-    <div class = "right" div>
+      <a href = "arena"> <button id = "bearButton"> Tank like a Bear! </button> </a>
 
     </div>
+    
+    <div class = "imgButtonPair">
+      
+      <div id = 'queenslanderPic'>
+        <img src = "/static/images/Queenslander.jpeg">
+      </div>
+
+      <a href = "arena"> <button class = "myButton"> Move like a Queenslander! </button> </a>
+
+    </div>
+
+    <div class = "imgButtonPair">    
+
+      <div id = 'phascolarctosPic'>
+        <img src = "static/images/Phascolarctos.jpeg">
+      </div>
+
+      <a href = "arena"> <button class = "myButton"> Intelligent like a Phascolarctos! </button> </a>
+
+    </div>
+
+    <div class = "imgButtonPair">
+
+      <div id = 'joeyPic'>
+        <img src = "static/images/Joey.jpg">
+      </div>
+
+      <a href = "arena"> <button class = "myButton"> Joeys get lucky! </button> </a>
+
+    </div>
+  
+   
     <script src="./static/js/script.js"></script>
   </body>
 </html>
